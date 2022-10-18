@@ -16,7 +16,7 @@ jobs:
       - name: Build with Gradle
         env:
           packageUser: ${{ github.actor }}
-          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+          packagePAT: ${{ secrets.TOKEN_GITHUB }}
         run: ./gradlew build
       - name: Generate Codecov Report
         if:  github.event_name == 'pull_request'
@@ -36,5 +36,5 @@ jobs:
       - name: Build with Gradle
         env:
           packageUser: ${{ github.actor }}
-          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+          packagePAT: ${{ secrets.TOKEN_GITHUB }}
         run: ./gradlew.bat build -x test
