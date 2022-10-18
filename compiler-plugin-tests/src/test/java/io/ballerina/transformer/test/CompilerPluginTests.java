@@ -168,6 +168,6 @@ public class CompilerPluginTests {
         Package currentPackage = loadPackage("sample_package_10");
         CodeGeneratorResult codeGenResult = currentPackage.runCodeGeneratorPlugins();
         DiagnosticResult diagnosticResult = codeGenResult.reportedDiagnostics();
-        Assert.assertEquals(diagnosticResult.errorCount(), 1);
+        Assert.assertEquals(diagnosticResult.errorCount(), 2);
     }
 }
