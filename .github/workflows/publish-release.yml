@@ -8,7 +8,7 @@ on:
 jobs:
   publish-release:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'ballerina-platform'
+    if: github.repository_owner == 'AzeemMuzammil'
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11.0.7
@@ -44,8 +44,6 @@ jobs:
           git checkout -b release-${VERSION}
           sed -i 's/ballerinaLangVersion=\(.*\)-SNAPSHOT/ballerinaLangVersion=\1/g' gradle.properties
           sed -i 's/ballerinaLangVersion=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/ballerinaLangVersion=\1/g' gradle.properties
-          sed -i 's/stdlib\(.*\)=\(.*\)-SNAPSHOT/stdlib\1=\2/g' gradle.properties
-          sed -i 's/stdlib\(.*\)=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/stdlib\1=\2/g' gradle.properties
           sed -i 's/observe\(.*\)=\(.*\)-SNAPSHOT/observe\1=\2/g' gradle.properties
           sed -i 's/observe\(.*\)=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/observe\1=\2/g' gradle.properties
           git add gradle.properties
